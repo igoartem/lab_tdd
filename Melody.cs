@@ -14,8 +14,10 @@ namespace Lab3_test
 
         public void play_melody()
         {
-
+            int kol=list_note.Count;
+            for (int i = 0; i < kol; i++)
+                list_note[i].playNote();
         }
-        //public 
+         
     }
 }

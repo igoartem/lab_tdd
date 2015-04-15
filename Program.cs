@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+using System.IO;
 
 namespace Lab3_test
 {
@@ -16,10 +16,13 @@ namespace Lab3_test
             string line = Console.ReadLine();
             List<Gamer> list_gamer;
 
+            Stream myStream = null;
+
+
             
 
-
             Thread.Sleep(2000);
+            
             Console.Beep(264, 125);
             Thread.Sleep(250);
             Console.Beep(264, 125);
