@@ -78,5 +78,29 @@ namespace Lab3_test
             Assert.AreEqual(note.sleep, 30);
 
         }
+
+         [TestMethod]
+        public void TestNewNoteDur()
+        {
+            Note note = new Note(0,10,0);
+            Assert.AreEqual(note.duration, 10);
+
+        }
+
+         [TestMethod]
+         public void TestNewNoteFreq()
+         {
+             Note note = new Note(10, 0, 0);
+             Assert.AreEqual(note.frequency, 10);
+
+         }
+
+         [TestMethod]
+         public void TestNewNoteSleep()
+         {
+             Note note = new Note(0, 0, 10);
+             Assert.AreEqual(note.sleep, 10);
+
+         }
     }
 }
