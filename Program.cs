@@ -14,14 +14,14 @@ namespace Lab3_test
         {
             Console.WriteLine("Введите количство игроков: ");
             string line = Console.ReadLine();
-            List<Gamer> list_gamer;
+            
 
             Stream myStream = null;
 
 
             
 
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             
             Console.Beep(264, 125);
             Thread.Sleep(250);
