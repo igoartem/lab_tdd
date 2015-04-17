@@ -122,5 +122,15 @@ namespace Lab3_test
              Assert.AreEqual(gamer.rating, 25);
 
          }
+
+         [TestMethod]
+         public void TestGamerRatingPlus2()
+         {
+             Gamer gamer = new Gamer();
+             gamer.rating = 10;
+             gamer.PlusRating(2);
+             Assert.AreEqual(gamer.rating, 12);
+
+         }
     }
 }
