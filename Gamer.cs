@@ -10,6 +10,7 @@ namespace Lab3_test
     {
         public string name { get; set; }
         public int number { get; set; }
+        public int rating { get; set; }
 
         public Gamer() { }
 
@@ -17,6 +18,7 @@ namespace Lab3_test
         {
             this.number += num;
         }
+
 
     }
 

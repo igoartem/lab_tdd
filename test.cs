@@ -102,5 +102,15 @@ namespace Lab3_test
              Assert.AreEqual(note.sleep, 10);
 
          }
+
+
+         [TestMethod]
+         public void TestGamerRating()
+         {
+             Gamer gamer = new Gamer();
+             gamer.rating = 10;
+             Assert.AreEqual(gamer.rating, 10);
+
+         }
     }
 }
