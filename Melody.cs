@@ -9,8 +9,16 @@ namespace Lab3_test
      public class Melody
     {
         public List<Note> list_note;
+        public string name {get;set;}
         public Melody() {   }
-        public Melody(List<Note> list) { list_note = list;}
+        public Melody(List<Note> list,string name) 
+        {
+            list_note =new List<Note>();
+            for (int i = 0; i < list.Count;i++ )
+                list_note.Add(list[i]);
+
+            this.name = name;
+        }
 
         public void play_melody()
         {

@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Lab3_test
 {
     [TestClass]
-    public class Test_gamer
+    public class Test
     {
 
 
@@ -145,7 +145,8 @@ namespace Lab3_test
          {
              Gamer gamer = new Gamer("test", 2);
              Assert.AreEqual(gamer.number, 2);
-
+             
          }
+
     }
 }
