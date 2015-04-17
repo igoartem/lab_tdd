@@ -14,10 +14,19 @@ namespace Lab3_test
         {
             Console.WriteLine("Введите количство игроков: ");
             string line = Console.ReadLine();
-            
+            int kol_gamer = Convert.ToInt32(line);
 
-         
-            Thread.Sleep(1000);
+            List<Gamer> list_gamer = new List<Gamer>();
+            Gamer gamer = new Gamer();
+
+            for (int i = 0; i < kol_gamer; i++)
+            {
+                Console.WriteLine("Введите имя игрока №"+ (i+1) + ": ");
+                line = Console.ReadLine();
+                
+            }
+
+                Thread.Sleep(1000);
             
             Console.Beep(264, 125);
             Thread.Sleep(250);

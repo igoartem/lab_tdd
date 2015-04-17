@@ -14,6 +14,12 @@ namespace Lab3_test
 
         public Gamer() { }
 
+        public Gamer(string name, int number) 
+        {
+            this.name = name;
+            this.number = number;
+        }
+
         public void number_plus_num(int num)
         {
             this.number += num;
@@ -21,9 +27,9 @@ namespace Lab3_test
 
         public void PlusRating(int kol)
         {
-            rating = 25;
-
+            rating +=kol ;
         }
+       
 
     }
 
