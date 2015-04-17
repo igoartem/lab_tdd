@@ -19,6 +19,11 @@ namespace Lab3_test
             this.number += num;
         }
 
+        public void PlusRating(int kol)
+        {
+            rating = 25;
+
+        }
 
     }
 
