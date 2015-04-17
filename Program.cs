@@ -16,11 +16,7 @@ namespace Lab3_test
             string line = Console.ReadLine();
             
 
-            Stream myStream = null;
-
-
-            
-
+         
             Thread.Sleep(1000);
             
             Console.Beep(264, 125);
