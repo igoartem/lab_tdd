@@ -139,5 +139,13 @@ namespace Lab3_test
              Assert.AreEqual(gamer.name, "test");
 
          }
+
+         [TestMethod]
+         public void TestNewGamerNumber()
+         {
+             Gamer gamer = new Gamer("test", 2);
+             Assert.AreEqual(gamer.number, 2);
+
+         }
     }
 }
