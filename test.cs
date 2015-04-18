@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Diagnostics;
 
 namespace Lab3_test
 {
@@ -148,5 +149,40 @@ namespace Lab3_test
              
          }
 
+         [TestMethod]
+         public void TestPlayNote()
+         {
+             Note note = new Note(500,1000,250);
+             Stopwatch stopWatch = new Stopwatch();
+             stopWatch.Start();
+             note.playNote();
+             stopWatch.Stop();
+             TimeSpan ts = stopWatch.Elapsed;
+
+             double sec = (double)ts.Seconds;
+             double mil = (double)((ts.Milliseconds) / 100) / 10;
+             double run = sec + mil;
+             double dur = (note.duration + note.sleep)/100;
+             Assert.AreEqual(dur / 10, run);
+
+         }
+
+         [TestMethod]
+         public void TestPlayNote2()
+         {
+             Note note = new Note(50, 1234, 257);
+             Stopwatch stopWatch = new Stopwatch();
+             stopWatch.Start();
+             note.playNote();
+             stopWatch.Stop();
+             TimeSpan ts = stopWatch.Elapsed;
+
+             double sec = (double)ts.Seconds;
+             double mil = (double)((ts.Milliseconds) / 100) / 10;
+             double run = sec + mil;
+             double dur = (note.duration + note.sleep) / 100;
+             Assert.AreEqual(dur / 10, run);
+
+         }
     }
 }

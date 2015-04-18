@@ -81,23 +81,23 @@ namespace Lab3_test
             load_gamer();
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
-            list_melody[0].play_melody();
+            list_melody[0].list_note[0].playNote();
             stopWatch.Stop();
             TimeSpan ts = stopWatch.Elapsed;
 
            
         
             double dd=0;
-            for (int i = 0; i < list_melody[0].list_note.Count; i++)
-            {
-                dd += list_melody[0].list_note[i].duration;
-                dd += list_melody[0].list_note[i].sleep;
-            }
+          //  for (int i = 0; i < list_melody[0].list_note.Count; i++)
+            //{
+                dd += list_melody[0].list_note[0].duration;
+                dd += list_melody[0].list_note[0].sleep;
+           // }
 
 
             double sec = (double)ts.Seconds;
 
-            double mil=(double)(ts.Milliseconds) / 100;
+            double mil=(double)((ts.Milliseconds) / 100)/10;
             double run = sec + mil;
             Console.WriteLine("RunTime " + dd/1000);
 
