@@ -65,6 +65,7 @@ namespace Lab3_test
             string line = Console.ReadLine();
             int kol_gamer = Convert.ToInt32(line);
             list_gamer = new List<Gamer>();
+            Console.Clear();
             for (int i = 0; i < kol_gamer; i++)
             {
                 Console.WriteLine("Введите имя игрока №" + (i + 1) + ": ");
@@ -75,33 +76,102 @@ namespace Lab3_test
             Console.Clear();
         }
 
+        static void view_menu()
+        {
+            Console.WriteLine("1 - Играть");
+            Console.WriteLine("9 - Выход");
+            Console.WriteLine("Выберите пункт меню: ");
+        }
+
+        static void menu()
+        {
+            int punkt_menu=-1;
+            string line;
+            while (punkt_menu != 9)
+            {
+                Console.Clear();
+
+                view_menu();
+                line = Console.ReadLine();
+                punkt_menu = Convert.ToInt32(line);
+                switch (punkt_menu)
+                {
+                    case 1:  game(); break; 
+
+                    default: break;
+
+                }
+
+            }
+
+        }
+        static void game()
+        {
+
+            int kol_vo_mel=list_melody.Count;
+            int kol_gamer = list_gamer.Count;
+            for (int i = 0; i < kol_vo_mel; i++)
+            {
+                for (int j = 0; j < kol_gamer; j++)
+                {
+                    gameGamer(j,i);
+
+                    
+
+                }
+
+            }
+        }
+        static void gameGamer(int num,int num_mel)
+        {
+            Console.Clear();
+            Console.WriteLine("Играет игрок №" + list_gamer[num].number+1);
+            int punkt_menu=0;
+            string line;
+            bool flag=true;
+            while (flag)
+            {
+                viewmenumusic();
+                line = Console.ReadLine();
+                punkt_menu = Convert.ToInt32(line);
+
+                switch (punkt_menu)
+                {
+                    case 1:  Console.Clear();
+                        Console.WriteLine("Проигрывается мелодия №" + num_mel + 1);
+                        list_melody[num_mel].play_melody();
+                        Console.Clear();
+                        Console.WriteLine("Выберите вариант ответа:");
+
+                        flag = false;
+                        break;
+
+                    default: break;
+
+                }
+            }
+
+        }
+
+        static void viewmenumusic()
+        {
+            Console.WriteLine("Выберите пункт меню:");
+            Console.WriteLine("1 - Прослушать мелодию");
+            Console.WriteLine("2 - Пропустить");
+            Console.WriteLine("3 - Угадать");
+        }
         static void Main(string[] args)
         {
             load_melody();
             load_gamer();
-            Stopwatch stopWatch = new Stopwatch();
-            stopWatch.Start();
+           
             list_melody[0].list_note[0].playNote();
-            stopWatch.Stop();
-            TimeSpan ts = stopWatch.Elapsed;
-
+            menu();
            
         
-            double dd=0;
-          //  for (int i = 0; i < list_melody[0].list_note.Count; i++)
-            //{
-                dd += list_melody[0].list_note[0].duration;
-                dd += list_melody[0].list_note[0].sleep;
-           // }
+            
 
-
-            double sec = (double)ts.Seconds;
-
-            double mil=(double)((ts.Milliseconds) / 100)/10;
-            double run = sec + mil;
-            Console.WriteLine("RunTime " + dd/1000);
-
-            Console.WriteLine("RunTime " + run);
+            
 
             //Thread.Sleep(1000);
             
