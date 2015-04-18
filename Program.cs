@@ -14,7 +14,32 @@ namespace Lab3_test
     {
         public static List<Gamer> list_gamer;
         public static List<Melody> list_melody;
+        public static List<Name_melody> list_name;
+
+        static void load_name()
+        {
+            list_name = new List<Name_melody>();
+
+            string line;
+
+            try
+            {
+                using (StreamReader sr = new StreamReader("name_melody.txt"))
+                {
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        list_name.Add(new Name_melody(line));
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("error file!");
+            }
         
+        
+        }
 
         static void load_melody()
         {
@@ -116,8 +141,6 @@ namespace Lab3_test
                 {
                     gameGamer(j,i);
 
-                    
-
                 }
 
             }
@@ -126,7 +149,7 @@ namespace Lab3_test
         {
             Console.Clear();
             Console.WriteLine("Играет игрок №" + list_gamer[num].number+1);
-            int punkt_menu=0;
+            int punkt_menu = 0;
             string line;
             bool flag=true;
             while (flag)
@@ -140,8 +163,7 @@ namespace Lab3_test
                     case 1:  Console.Clear();
                         Console.WriteLine("Проигрывается мелодия №" + num_mel + 1);
                         list_melody[num_mel].play_melody();
-                        Console.Clear();
-                        Console.WriteLine("Выберите вариант ответа:");
+                        
 
                         flag = false;
                         break;
@@ -150,6 +172,36 @@ namespace Lab3_test
 
                 }
             }
+
+        }
+
+        static void proverka_otvet()
+        {
+            int punkr_melody = 0;
+            string line;
+            bool flag=true;
+
+            while (flag)
+            {
+                Console.Clear();
+                Console.WriteLine("Выберите вариант ответа:");
+                line = Console.ReadLine();
+                punkr_melody = Convert.ToInt32(line);
+                switch (punkr_melody)
+                {
+                   
+ 
+
+                }
+
+            }
+
+
+        }
+
+        static void generate_var()
+        {
+
 
         }
 
@@ -163,6 +215,7 @@ namespace Lab3_test
         static void Main(string[] args)
         {
             load_melody();
+            load_name();
             load_gamer();
            
             list_melody[0].list_note[0].playNote();

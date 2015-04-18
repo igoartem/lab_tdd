@@ -184,5 +184,27 @@ namespace Lab3_test
              Assert.AreEqual(dur / 10, run);
 
          }
+
+         [TestMethod]
+         public void TestProverkaNameMelody()
+         {
+             Melody mel = new Melody();
+             mel.name = "test";
+
+             Assert.IsTrue(mel.proverka("test"));
+
+         }
+
+         [TestMethod]
+         public void TestProverkaNameMelody2()
+         {
+             Melody mel = new Melody();
+             mel.name = "test2";
+
+             Assert.IsTrue(mel.proverka("test2"));
+
+         }
+
+
     }
 }

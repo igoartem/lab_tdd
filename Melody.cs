@@ -26,6 +26,13 @@ namespace Lab3_test
             for (int i = 0; i < kol; i++)
                 list_note[i].playNote();
         }
+        public bool proverka(string name)
+        {
+            if (this.name == name)
+                return true;
+            else
+                return false;
+        }
          
     }
 }
