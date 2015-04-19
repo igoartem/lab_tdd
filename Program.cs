@@ -15,10 +15,14 @@ namespace Lab3_test
         public static List<Gamer> list_gamer;
         public static List<Melody> list_melody;
         public static List<Name_melody> list_name;
+        public static List<Name_melody> list_otvet;
 
+        //----------------------------------------------------------------
+        // загрузка имен мелодий для ответов
         static void load_name()
         {
             list_name = new List<Name_melody>();
+            list_otvet = new List<Name_melody>();
 
             string line;
 
@@ -40,7 +44,8 @@ namespace Lab3_test
         
         
         }
-
+        //----------------------------------------------------------------
+        // Загрузка мелодий
         static void load_melody()
         {
             try
@@ -83,7 +88,8 @@ namespace Lab3_test
             }
         }
 
-
+        //----------------------------------------------------------------
+        // загрузить игроков
         static void load_gamer()
         {
             Console.WriteLine("Введите количство игроков: ");
@@ -101,13 +107,16 @@ namespace Lab3_test
             Console.Clear();
         }
 
+        //----------------------------------------------------------------
+        // показать пункты меню
         static void view_menu()
         {
             Console.WriteLine("1 - Играть");
             Console.WriteLine("9 - Выход");
             Console.WriteLine("Выберите пункт меню: ");
         }
-
+        //----------------------------------------------------------------
+        //Главное меню
         static void menu()
         {
             int punkt_menu=-1;
@@ -130,6 +139,8 @@ namespace Lab3_test
             }
 
         }
+        //---------------------------------------------------------------
+       // запустить игру
         static void game()
         {
 
@@ -145,6 +156,8 @@ namespace Lab3_test
 
             }
         }
+        //----------------------------------------------------------------
+        // играет игрок № num
         static void gameGamer(int num,int num_mel)
         {
             Console.Clear();
@@ -174,13 +187,15 @@ namespace Lab3_test
             }
 
         }
-
+        //----------------------------------------------------------------
+        // проверка правильности ответа
         static void proverka_otvet()
         {
             int punkr_melody = 0;
             string line;
             bool flag=true;
 
+            generate_var();
             while (flag)
             {
                 Console.Clear();
@@ -198,13 +213,26 @@ namespace Lab3_test
 
 
         }
-
+        //------------------------------------------------------------------
+        // метод генерации вариантов
         static void generate_var()
         {
+            Random rand = new Random();
+
+            int prav = rand.Next(3);
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (i == prav)
+                    list_otvet.Add(new Name_melody());
+                
+
+            }
 
 
         }
-
+        //----------------------------------------------------------------
+        // пукнт меню для мелодии
         static void viewmenumusic()
         {
             Console.WriteLine("Выберите пункт меню:");
@@ -212,12 +240,14 @@ namespace Lab3_test
             Console.WriteLine("2 - Пропустить");
             Console.WriteLine("3 - Угадать");
         }
+        //----------------------------------------------------------------
+        // main
         static void Main(string[] args)
         {
             load_melody();
             load_name();
             load_gamer();
-           
+            generate_var();
             list_melody[0].list_note[0].playNote();
             menu();
            

@@ -30,8 +30,8 @@ namespace Lab3_test
         {
             if (this.name == name)
                 return true;
-            else
-                return false;
+
+            return false;
         }
          
     }
